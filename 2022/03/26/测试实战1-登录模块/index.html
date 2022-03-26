@@ -4,7 +4,7 @@
 
 <head>
     
-    <title>软件测试笔记2--测试模块8个要素 - Hexo</title>
+    <title>测试实战1-登录模块 - Hexo</title>
     <meta charset="UTF-8">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -12,26 +12,29 @@
     
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <meta name="description" content="关于测试模块8个要素的总结1、测试编号一般的格式为：项目简称_项目模块_编号 2、用例标题可以使用预期结果+测试点作为用例标题 3、项目&#x2F;模块用例所属项目或模块 4、优先级P0-P4（P0最高） 5、前置条件&#x2F;预置模块操作步骤之前的操作 6、测试步骤执行用例执行步骤 7、测试数据执行步骤中的重点数据 8、预期结果用例执行结果+不同角色隐性结果">
+    <meta name="description" content="登录模块测试基本流程分析需求-&gt;提取测试点-&gt;设计用例-&gt;用例评审-&gt;执行用例-&gt;缺陷管理-&gt;测试报告 在此文章中只进行前面三条 确认测试对象和功能需求一般的登录功能有三种形式，一种为账号密码验证码，一种为手机号验证码，一种为扫码登录，这里以手机号验证码的形式为对象做例子。 登录需求-1（假设）1、输入正确的中国区手机号（11位） -&gt;当文本框失去焦点的时">
 <meta property="og:type" content="article">
-<meta property="og:title" content="软件测试笔记2--测试模块8个要素">
-<meta property="og:url" content="https://hzwfize.github.io/2022/03/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B02-%E6%B5%8B%E8%AF%95%E6%A8%A1%E5%9D%978%E4%B8%AA%E8%A6%81%E7%B4%A0/index.html">
+<meta property="og:title" content="测试实战1-登录模块">
+<meta property="og:url" content="https://hzwfize.github.io/2022/03/26/%E6%B5%8B%E8%AF%95%E5%AE%9E%E6%88%981-%E7%99%BB%E5%BD%95%E6%A8%A1%E5%9D%97/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="关于测试模块8个要素的总结1、测试编号一般的格式为：项目简称_项目模块_编号 2、用例标题可以使用预期结果+测试点作为用例标题 3、项目&#x2F;模块用例所属项目或模块 4、优先级P0-P4（P0最高） 5、前置条件&#x2F;预置模块操作步骤之前的操作 6、测试步骤执行用例执行步骤 7、测试数据执行步骤中的重点数据 8、预期结果用例执行结果+不同角色隐性结果">
+<meta property="og:description" content="登录模块测试基本流程分析需求-&gt;提取测试点-&gt;设计用例-&gt;用例评审-&gt;执行用例-&gt;缺陷管理-&gt;测试报告 在此文章中只进行前面三条 确认测试对象和功能需求一般的登录功能有三种形式，一种为账号密码验证码，一种为手机号验证码，一种为扫码登录，这里以手机号验证码的形式为对象做例子。 登录需求-1（假设）1、输入正确的中国区手机号（11位） -&gt;当文本框失去焦点的时">
 <meta property="og:locale">
-<meta property="article:published_time" content="2022-03-15T07:47:51.000Z">
-<meta property="article:modified_time" content="2022-03-22T16:13:28.665Z">
+<meta property="og:image" content="https://hzwfize.github.io/2022/03/26/%E6%B5%8B%E8%AF%95%E5%AE%9E%E6%88%981-%E7%99%BB%E5%BD%95%E6%A8%A1%E5%9D%97/yuanxUI.jpg">
+<meta property="og:image" content="https://hzwfize.github.io/2022/03/26/%E6%B5%8B%E8%AF%95%E5%AE%9E%E6%88%981-%E7%99%BB%E5%BD%95%E6%A8%A1%E5%9D%97/yuanxUI2.jpg">
+<meta property="og:image" content="https://hzwfize.github.io/2022/03/26/%E6%B5%8B%E8%AF%95%E5%AE%9E%E6%88%981-%E7%99%BB%E5%BD%95%E6%A8%A1%E5%9D%97/TestPoint.png">
+<meta property="og:image" content="https://hzwfize.github.io/2022/03/26/%E6%B5%8B%E8%AF%95%E5%AE%9E%E6%88%981-%E7%99%BB%E5%BD%95%E6%A8%A1%E5%9D%97/test.png">
+<meta property="article:published_time" content="2022-03-26T01:51:39.000Z">
+<meta property="article:modified_time" content="2022-03-26T07:15:04.702Z">
 <meta property="article:author" content="nono">
 <meta property="article:tag" content="软件测试">
-<meta property="article:tag" content="文章">
-<meta property="article:tag" content="模板">
-<meta property="article:tag" content="流程">
+<meta property="article:tag" content="模块测试">
 <meta name="twitter:card" content="summary">
-    <link rel="stylesheet" href="/lib/jquery.fancybox.min.css?v=1648286728262">
+<meta name="twitter:image" content="https://hzwfize.github.io/2022/03/26/%E6%B5%8B%E8%AF%95%E5%AE%9E%E6%88%981-%E7%99%BB%E5%BD%95%E6%A8%A1%E5%9D%97/yuanxUI.jpg">
+    <link rel="stylesheet" href="/lib/jquery.fancybox.min.css?v=1648286728255">
     
-    <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css?v=1648286728262">
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1648286728262">
-    <link rel="stylesheet" href="/css/style.css?v=1648286728262">
+    <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css?v=1648286728255">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1648286728255">
+    <link rel="stylesheet" href="/css/style.css?v=1648286728255">
      
     
 <meta name="generator" content="Hexo 6.1.0"></head>
@@ -175,25 +178,25 @@
   <article>
       
           <div class="nexmoe-post-cover" style="padding-bottom: 60%;"> 
-              <img data-src="https://s2.loli.net/2022/03/19/rKu9vjkJ81ipx2X.jpg" data-sizes="auto" alt="软件测试笔记2--测试模块8个要素" class="lazyload">
-              <h1>软件测试笔记2--测试模块8个要素</h1>
+              <img data-src="/../../images/121.jpg" data-sizes="auto" alt="测试实战1-登录模块" class="lazyload">
+              <h1>测试实战1-登录模块</h1>
           </div>
       
       
       <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
-    <a><i class="nexmoefont icon-calendar-fill"></i>2022年03月15日</a>
+    <a><i class="nexmoefont icon-calendar-fill"></i>2022年03月26日</a>
 </div>
 
       
 
-      <h3 id="关于测试模块8个要素的总结"><a href="#关于测试模块8个要素的总结" class="headerlink" title="关于测试模块8个要素的总结"></a>关于测试模块8个要素的总结</h3><h2 id="1、测试编号"><a href="#1、测试编号" class="headerlink" title="1、测试编号"></a>1、测试编号</h2><p>一般的格式为：项目简称_项目模块_编号</p>
-<h2 id="2、用例标题"><a href="#2、用例标题" class="headerlink" title="2、用例标题"></a>2、用例标题</h2><p>可以使用预期结果+测试点作为用例标题</p>
-<h2 id="3、项目-x2F-模块"><a href="#3、项目-x2F-模块" class="headerlink" title="3、项目&#x2F;模块"></a>3、项目&#x2F;模块</h2><p>用例所属项目或模块</p>
-<h2 id="4、优先级"><a href="#4、优先级" class="headerlink" title="4、优先级"></a>4、优先级</h2><p>P0-P4（P0最高）</p>
-<h2 id="5、前置条件-x2F-预置模块"><a href="#5、前置条件-x2F-预置模块" class="headerlink" title="5、前置条件&#x2F;预置模块"></a>5、前置条件&#x2F;预置模块</h2><p>操作步骤之前的操作</p>
-<h2 id="6、测试步骤"><a href="#6、测试步骤" class="headerlink" title="6、测试步骤"></a>6、测试步骤</h2><p>执行用例执行步骤</p>
-<h2 id="7、测试数据"><a href="#7、测试数据" class="headerlink" title="7、测试数据"></a>7、测试数据</h2><p>执行步骤中的重点数据</p>
-<h2 id="8、预期结果"><a href="#8、预期结果" class="headerlink" title="8、预期结果"></a>8、预期结果</h2><p>用例执行结果+不同角色隐性结果</p>
+      <h1 id="登录模块测试基本流程"><a href="#登录模块测试基本流程" class="headerlink" title="登录模块测试基本流程"></a>登录模块测试基本流程</h1><p>分析需求-&gt;提取测试点-&gt;设计用例-&gt;用例评审-&gt;执行用例-&gt;缺陷管理-&gt;测试报告</p>
+<p>在此文章中只进行前面三条</p>
+<h1 id="确认测试对象和功能需求"><a href="#确认测试对象和功能需求" class="headerlink" title="确认测试对象和功能需求"></a>确认测试对象和功能需求</h1><p>一般的登录功能有三种形式，一种为账号密码验证码，一种为手机号验证码，一种为扫码登录，这里以手机号验证码的形式为对象做例子。</p>
+<h2 id="登录需求-1（假设）"><a href="#登录需求-1（假设）" class="headerlink" title="登录需求-1（假设）"></a>登录需求-1（假设）</h2><p>1、输入正确的中国区手机号（11位）<br> -&gt;当文本框失去焦点的时候验证，红色为失败，绿色为成功<br>2、点击发送验证码<br> -&gt;如果手机号文本框状态为绿色，弹出“点击按钮进行验证”<br> -&gt;如果手机号文本框为红色，提示手机号不正确<br>3、点击按钮进行验证<br> -&gt;拖拽图形到指定位置，按钮消失<br> -&gt;拖拽图形未到指定位置，晃动提醒，滑块回到初始位置<br> -&gt;超过5次，提示尝试过多，请点击重试</p>
+<p> <img data-fancybox="gallery" data-sizes="auto" data-src="/2022/03/26/%E6%B5%8B%E8%AF%95%E5%AE%9E%E6%88%981-%E7%99%BB%E5%BD%95%E6%A8%A1%E5%9D%97/yuanxUI.jpg" alt="原型图1" class="lazyload">  <img data-fancybox="gallery" data-sizes="auto" data-src="/2022/03/26/%E6%B5%8B%E8%AF%95%E5%AE%9E%E6%88%981-%E7%99%BB%E5%BD%95%E6%A8%A1%E5%9D%97/yuanxUI2.jpg" alt="原型图2" class="lazyload"></p>
+<h2 id="登录需求-2（假设）"><a href="#登录需求-2（假设）" class="headerlink" title="登录需求-2（假设）"></a>登录需求-2（假设）</h2><p>1、输入验证码<br> -&gt;正确的验证码，并勾选“我已阅读并同意”，点击登录，进入系统;<br> -&gt;错误的验证码，并勾选“我已阅读并同意”，点击登录，提示验证码错误;<br> -&gt;正确的验证码，未勾选“我已阅读并同意”，点击登录，提示请勾选;<br>2、点击登录<br> -&gt;手机号、验证码都为绿色，勾选“我已阅读并同意”，登录成功</p>
+<h2 id="提取测试点"><a href="#提取测试点" class="headerlink" title="提取测试点"></a>提取测试点</h2><p> 分为功能和非功能，再根据功能点进行正向和逆向提取测试点<br>  <img src="/2022/03/26/%E6%B5%8B%E8%AF%95%E5%AE%9E%E6%88%981-%E7%99%BB%E5%BD%95%E6%A8%A1%E5%9D%97/TestPoint.png"></p>
+<h2 id="编写测试用例"><a href="#编写测试用例" class="headerlink" title="编写测试用例"></a>编写测试用例</h2><p>  <img src="/2022/03/26/%E6%B5%8B%E8%AF%95%E5%AE%9E%E6%88%981-%E7%99%BB%E5%BD%95%E6%A8%A1%E5%9D%97/test.png"></p>
 
   </article>
 
@@ -201,7 +204,7 @@
       
     <div class="nexmoe-post-copyright">
         <strong>博主：</strong>nono<br>
-        <strong>文章連結：</strong><a href="https://hzwfize.github.io/2022/03/15/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B02-%E6%B5%8B%E8%AF%95%E6%A8%A1%E5%9D%978%E4%B8%AA%E8%A6%81%E7%B4%A0/" title="https:&#x2F;&#x2F;hzwfize.github.io&#x2F;2022&#x2F;03&#x2F;15&#x2F;%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B02-%E6%B5%8B%E8%AF%95%E6%A8%A1%E5%9D%978%E4%B8%AA%E8%A6%81%E7%B4%A0&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;hzwfize.github.io&#x2F;2022&#x2F;03&#x2F;15&#x2F;%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B02-%E6%B5%8B%E8%AF%95%E6%A8%A1%E5%9D%978%E4%B8%AA%E8%A6%81%E7%B4%A0&#x2F;</a><br>
+        <strong>文章連結：</strong><a href="https://hzwfize.github.io/2022/03/26/%E6%B5%8B%E8%AF%95%E5%AE%9E%E6%88%981-%E7%99%BB%E5%BD%95%E6%A8%A1%E5%9D%97/" title="https:&#x2F;&#x2F;hzwfize.github.io&#x2F;2022&#x2F;03&#x2F;26&#x2F;%E6%B5%8B%E8%AF%95%E5%AE%9E%E6%88%981-%E7%99%BB%E5%BD%95%E6%A8%A1%E5%9D%97&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;hzwfize.github.io&#x2F;2022&#x2F;03&#x2F;26&#x2F;%E6%B5%8B%E8%AF%95%E5%AE%9E%E6%88%981-%E7%99%BB%E5%BD%95%E6%A8%A1%E5%9D%97&#x2F;</a><br>
         
             <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
         
@@ -212,10 +215,10 @@
   
   <div class="nexmoe-post-meta nexmoe-rainbow">
     
-        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+        <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E5%AE%9E%E6%88%98/">实战</a>
     
     
-        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E6%96%87%E7%AB%A0/" rel="tag">文章</a> <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E6%A8%A1%E6%9D%BF/" rel="tag">模板</a> <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E6%B5%81%E7%A8%8B/" rel="tag">流程</a> <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/" rel="tag">软件测试</a>
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E6%A8%A1%E5%9D%97%E6%B5%8B%E8%AF%95/" rel="tag">模块测试</a> <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/" rel="tag">软件测试</a>
     
 </div>
 
@@ -271,7 +274,7 @@
 
  
 
-<script async src="/js/app.js?v=1648286728263"></script>
+<script async src="/js/app.js?v=1648286728257"></script>
 
 
 
