@@ -15,15 +15,15 @@
     <meta name="description" content="缺陷定义的流程 定义   软件中使用中任何问题都为缺陷，简称：bug   衡量是否为缺陷的标准   1、少功能2、功能实现错误3、多功能4、隐性功能错误5、不易使用   缺陷产生的原因   结论：是软件就有缺陷   缺陷的生命周期   注入bug——&gt;发现bug——&gt;修复bug   缺陷描述的核心内容   描述缺陷使用，附件可以为空   提交缺陷的要素   提示：通过缺陷管理工具与开发">
 <meta property="og:type" content="article">
 <meta property="og:title" content="软件测试笔记4--软件缺陷判定标准">
-<meta property="og:url" content="https://hzwfize.github.io/2022/03/22/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B04-%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7%E5%88%A4%E5%AE%9A%E6%A0%87%E5%87%86/index.html">
+<meta property="og:url" content="http://139.196.154.27/2022/03/22/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B04-%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7%E5%88%A4%E5%AE%9A%E6%A0%87%E5%87%86/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="缺陷定义的流程 定义   软件中使用中任何问题都为缺陷，简称：bug   衡量是否为缺陷的标准   1、少功能2、功能实现错误3、多功能4、隐性功能错误5、不易使用   缺陷产生的原因   结论：是软件就有缺陷   缺陷的生命周期   注入bug——&gt;发现bug——&gt;修复bug   缺陷描述的核心内容   描述缺陷使用，附件可以为空   提交缺陷的要素   提示：通过缺陷管理工具与开发">
 <meta property="og:locale">
-<meta property="og:image" content="https://hzwfize.github.io/2022/03/22/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B04-%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7%E5%88%A4%E5%AE%9A%E6%A0%87%E5%87%86/reson.jpg">
-<meta property="og:image" content="https://hzwfize.github.io/2022/03/22/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B04-%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7%E5%88%A4%E5%AE%9A%E6%A0%87%E5%87%86/live.jpg">
-<meta property="og:image" content="https://hzwfize.github.io/2022/03/22/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B04-%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7%E5%88%A4%E5%AE%9A%E6%A0%87%E5%87%86/hex.jpg">
-<meta property="og:image" content="https://hzwfize.github.io/2022/03/22/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B04-%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7%E5%88%A4%E5%AE%9A%E6%A0%87%E5%87%86/yaosu.jpg">
-<meta property="og:image" content="https://hzwfize.github.io/2022/03/22/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B04-%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7%E5%88%A4%E5%AE%9A%E6%A0%87%E5%87%86/leix.jpg">
+<meta property="og:image" content="http://139.196.154.27/2022/03/22/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B04-%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7%E5%88%A4%E5%AE%9A%E6%A0%87%E5%87%86/reson.jpg">
+<meta property="og:image" content="http://139.196.154.27/2022/03/22/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B04-%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7%E5%88%A4%E5%AE%9A%E6%A0%87%E5%87%86/live.jpg">
+<meta property="og:image" content="http://139.196.154.27/2022/03/22/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B04-%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7%E5%88%A4%E5%AE%9A%E6%A0%87%E5%87%86/hex.jpg">
+<meta property="og:image" content="http://139.196.154.27/2022/03/22/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B04-%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7%E5%88%A4%E5%AE%9A%E6%A0%87%E5%87%86/yaosu.jpg">
+<meta property="og:image" content="http://139.196.154.27/2022/03/22/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B04-%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7%E5%88%A4%E5%AE%9A%E6%A0%87%E5%87%86/leix.jpg">
 <meta property="article:published_time" content="2022-03-22T01:58:07.000Z">
 <meta property="article:modified_time" content="2022-03-26T06:43:07.351Z">
 <meta property="article:author" content="nono">
@@ -32,12 +32,12 @@
 <meta property="article:tag" content="缺陷">
 <meta property="article:tag" content="bug">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://hzwfize.github.io/2022/03/22/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B04-%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7%E5%88%A4%E5%AE%9A%E6%A0%87%E5%87%86/reson.jpg">
-    <link rel="stylesheet" href="/lib/jquery.fancybox.min.css?v=1648448638095">
+<meta name="twitter:image" content="http://139.196.154.27/2022/03/22/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B04-%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7%E5%88%A4%E5%AE%9A%E6%A0%87%E5%87%86/reson.jpg">
+    <link rel="stylesheet" href="/lib/jquery.fancybox.min.css?v=1648455241666">
     
-    <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css?v=1648448638095">
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1648448638095">
-    <link rel="stylesheet" href="/css/style.css?v=1648448638095">
+    <link rel="stylesheet" href="/lib/mdui_043tiny/css/mdui.css?v=1648455241666">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1648455241666">
+    <link rel="stylesheet" href="/css/style.css?v=1648455241666">
      
     
 <meta name="generator" content="Hexo 6.1.0"></head>
@@ -245,7 +245,7 @@
       
     <div class="nexmoe-post-copyright">
         <strong>博主：</strong>nono<br>
-        <strong>文章連結：</strong><a href="https://hzwfize.github.io/2022/03/22/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B04-%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7%E5%88%A4%E5%AE%9A%E6%A0%87%E5%87%86/" title="https:&#x2F;&#x2F;hzwfize.github.io&#x2F;2022&#x2F;03&#x2F;22&#x2F;%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B04-%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7%E5%88%A4%E5%AE%9A%E6%A0%87%E5%87%86&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;hzwfize.github.io&#x2F;2022&#x2F;03&#x2F;22&#x2F;%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B04-%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7%E5%88%A4%E5%AE%9A%E6%A0%87%E5%87%86&#x2F;</a><br>
+        <strong>文章連結：</strong><a href="http://139.196.154.27/2022/03/22/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B04-%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7%E5%88%A4%E5%AE%9A%E6%A0%87%E5%87%86/" title="http:&#x2F;&#x2F;139.196.154.27&#x2F;2022&#x2F;03&#x2F;22&#x2F;%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B04-%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7%E5%88%A4%E5%AE%9A%E6%A0%87%E5%87%86&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;139.196.154.27&#x2F;2022&#x2F;03&#x2F;22&#x2F;%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B04-%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7%E5%88%A4%E5%AE%9A%E6%A0%87%E5%87%86&#x2F;</a><br>
         
             <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
         
@@ -315,7 +315,7 @@
 
  
 
-<script async src="/js/app.js?v=1648448638096"></script>
+<script async src="/js/app.js?v=1648455241668"></script>
 
 
 
